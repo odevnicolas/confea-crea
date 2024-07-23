@@ -11,7 +11,7 @@ import { Dialog, DialogContent, DialogTrigger } from '../../ui/modal';
 const LoginForm: React.FC = () => {
   const [govLoginModalIsOppened, setGovLoginModalIsOppened] = useState(false);
   return (
-    <main className='flex-1 flex w-screen h-dvhp -2 overflow-hidden bg-white'>
+    <main className='flex-1 flex w-screen h-dvhp overflow-hidden bg-white'>
       <div className='w-1/2 pl-24 h-screen'>
         <header className='w-full flex justify-between mt-9 items-center'>
           <div className='flex items-center'>
