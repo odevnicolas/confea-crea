@@ -11,11 +11,6 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "author": {
-    "name": "Sphere",
-    "email": "hello@Sphere.com",
-    "url": "https://Sphere.com"
-  },
   "dependencies": {
     "apexcharts": "^3.41.0",
     "flatpickr": "^4.6.13",
