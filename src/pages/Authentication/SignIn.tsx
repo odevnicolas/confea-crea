@@ -25,14 +25,11 @@ const LoginForm: React.FC = () => {
 
   const handleLogin = () => {
     if (cpf === '000.000.000-00' && password === '123456789') {
-      toast.success('Login foi um sucesso!', {
-        onClose: () => {
-          setTimeout(() => {
-            login();
-            navigate('/');
-          }, 1000);
-        },
-      });
+      toast.success('Login foi um sucesso!');
+      login();
+      setTimeout(() => {
+        navigate('/');
+      }, 1000)
     } else {
       toast.error('Cadastro inválido!');
     }
