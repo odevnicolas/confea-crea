@@ -8,6 +8,10 @@
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @layer components {
 }
 
