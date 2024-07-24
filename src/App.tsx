@@ -37,7 +37,7 @@ function App() {
           index
           element={
             <>
-              <PageTitle title="Sphere - Tailwind CSS Admin Reactjs Dashboard Template" />
+              <PageTitle title="Confea - CREA" />
               <ECommerce />
             </>
           }
