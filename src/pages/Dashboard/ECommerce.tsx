@@ -15,7 +15,7 @@ const ECommerce: React.FC = () => {
     <DefaultLayout>
       <div className='flex justify-between mb-8'>
         <div>
-          <h1 className='dark:text-white font-extrabold text-2xl'>CREA - CE</h1>
+          <h1 className='dark:text-white font-extrabold text-2xl'>Dashboard</h1>
           <p>Inicio / Dashboard</p>
         </div>
         <p>Precisando de ajuda consulte? <span className='text-blue-500'>Manual de Área de Serviços</span></p>
@@ -24,7 +24,7 @@ const ECommerce: React.FC = () => {
       <div className='grid grid-cols-4 gap-4'>
         <div className='col-span-3 bg-gray-200 p-4'>
           <p className='mb-2'>Acesso rápido</p>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 xl:grid-cols-3 2xl:gap-7.5 mb-4">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 xl:grid-cols-3 2xl:gap-7.5 mb-4 w-full">
             <CardDataStats title="Contratantes" total="$3.456K" rate="Cadastre, pesquise e gerencie seus contratantes aqui." levelUp>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="40" height="40" rx="8" fill="#187BF0"/>
