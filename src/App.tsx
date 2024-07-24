@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
@@ -16,10 +16,13 @@ import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import Cadastrar from './pages/cadastrar/cadastrar';
+import { useAuth, AuthProvider } from './contexts/AuthContext';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,13 +32,19 @@ function App() {
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
+  useEffect(() => {
+    if (!isAuthenticated && pathname !== '/auth/signin' && pathname !== '/auth/signup') {
+      navigate('/auth/signin');
+    }
+  }, [isAuthenticated, pathname, navigate]);
+
   return loading ? (
     <Loader />
   ) : (
     <>
       <Routes>
         <Route
-          index
+          path="/"
           element={
             <>
               <PageTitle title="Confea - CREA" />
@@ -56,7 +65,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <PageTitle title="Profile | Sphere - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Perfil" />
               <Profile />
             </>
           }
@@ -128,7 +137,7 @@ function App() {
           path="/auth/signin"
           element={
             <>
-              <PageTitle title="Signin | Sphere - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Login | CONFEA - Conselho Federal de Engenharia e Agronomia" />
               <SignIn />
             </>
           }
@@ -141,19 +150,27 @@ function App() {
               <SignUp />
             </>
           }
-          />
-          <Route
-            path="/cadastrar"
-            element={
-              <>
-                <PageTitle title="Cadastrar ART" />
-                <Cadastrar />
-              </>
-            }
-          />
+        />
+        <Route
+          path="/cadastrar"
+          element={
+            <>
+              <PageTitle title="Cadastrar ART" />
+              <Cadastrar closeModal={function (): void {
+                throw new Error('Function not implemented.');
+              } } />
+            </>
+          }
+        />
       </Routes>
     </>
   );
 }
 
-export default App;
+const AppWithProvider = () => (
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);
+
+export default AppWithProvider;
