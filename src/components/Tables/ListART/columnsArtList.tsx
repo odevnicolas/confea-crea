@@ -33,6 +33,22 @@ export const columnsArtList: ColumnDef<any>[] = [
     },
   },
   {
+    accessorKey: 'state',
+    header: 'Estado',
+    cell: ({ row }) => {
+      return (
+        <div className="flex w-20 gap-1 text-global-gray-70">
+          <span className="text-global-gray-100 text-font-size-base/R">
+            Tipo:
+          </span>
+          <p className="flex w-full">
+            {row.getValue('state')}
+          </p>
+        </div>
+      );
+    },
+  },
+  {
     accessorKey: 'status',
     header: 'Análise',
     cell: ({ row }) => {

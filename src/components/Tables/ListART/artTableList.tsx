@@ -15,6 +15,7 @@ const dataList = [
   {
     "id": "ART123456",
     "detail": "Instalação Elétrica",
+    "state": "CE",
     "status": "Aprovado",
     "paymentType": "Boleto",
     "paid": 'Pago',
@@ -24,6 +25,7 @@ const dataList = [
   {
     "id": "ART654321",
     "detail": "Construção Civil",
+    "state": "SP",
     "status": "Em análise",
     "paymentType": "Cartão",
     "paid": 'Não pago',
