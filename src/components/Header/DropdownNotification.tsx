@@ -76,7 +76,7 @@ const DropdownNotification = () => {
         }`}
       >
         <div className="px-4.5 py-3">
-          <h5 className="text-sm font-medium text-bodydark2">Notification</h5>
+          <h5 className="text-sm font-medium text-bodydark2">Avisos</h5>
         </div>
 
         <ul className="flex h-auto flex-col overflow-y-auto">
@@ -87,13 +87,12 @@ const DropdownNotification = () => {
             >
               <p className="text-sm">
                 <span className="text-black dark:text-white">
-                  Edit your information in a swipe
+                  Crie sua ART facilmente
                 </span>{' '}
-                Sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim.
+                Utilize nosso sistema para gerar Anotações de Responsabilidade Técnica de forma prática e rápida.
               </p>
 
-              <p className="text-xs">12 May, 2025</p>
+              <p className="text-xs">24 Jul, 2024</p>
             </Link>
           </li>
           <li>
@@ -103,12 +102,12 @@ const DropdownNotification = () => {
             >
               <p className="text-sm">
                 <span className="text-black dark:text-white">
-                  It is a long established fact
+                  Verifique suas ARTs
                 </span>{' '}
-                that a reader will be distracted by the readable.
+                Consulte e valide suas Anotações de Responsabilidade Técnica diretamente pelo nosso portal.
               </p>
 
-              <p className="text-xs">24 Feb, 2025</p>
+              <p className="text-xs">24 Jul, 2024</p>
             </Link>
           </li>
           <li>
@@ -118,13 +117,12 @@ const DropdownNotification = () => {
             >
               <p className="text-sm">
                 <span className="text-black dark:text-white">
-                  There are many variations
+                  Atualize seus dados
                 </span>{' '}
-                of passages of Lorem Ipsum available, but the majority have
-                suffered
+                Mantenha suas informações sempre atualizadas para garantir a validade das suas ARTs.
               </p>
 
-              <p className="text-xs">04 Jan, 2025</p>
+              <p className="text-xs">24 Jul, 2024</p>
             </Link>
           </li>
           <li>
@@ -134,16 +132,16 @@ const DropdownNotification = () => {
             >
               <p className="text-sm">
                 <span className="text-black dark:text-white">
-                  There are many variations
+                  Consulte ARTs anteriores
                 </span>{' '}
-                of passages of Lorem Ipsum available, but the majority have
-                suffered
+                Acesse e revise todas as ARTs emitidas anteriormente em um só lugar.
               </p>
 
-              <p className="text-xs">01 Dec, 2024</p>
+              <p className="text-xs">24 Jul, 2024</p>
             </Link>
           </li>
         </ul>
+
       </div>
     </li>
   );

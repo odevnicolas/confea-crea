@@ -26,11 +26,11 @@ const StepFour: React.FC<TStepFour> = ({ setActualStep }) => {
         </div>
 
         <div className="grid grid-cols-4 gap-4 mt-10">
-          <div className="col-span-1">
+          <div className="col-span-1 ">
             <h1 className='text-white font-bold mb-3'>Contratante <span className='text-red-500'>*</span></h1>
             <Input
               placeholder='000.000.000-00'
-              className='h-10 border border-[#333333] bg-[#181C21] text-white' />
+              className='h-10 border border-[#333333] bg-[#181C21] text-white mr-32' />
           </div>
           
           <div className="col-span-1">

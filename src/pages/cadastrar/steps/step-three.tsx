@@ -70,7 +70,7 @@ const StepThree: React.FC<TStepThree> = ({ setActualStep }) => {
                 </Select>
             </div>
 
-            <div className="w-full flex space-x-4 mt-10">
+            <div className="w-full space-y-8 mt-10">
                 <div className="w-full">
                     <h1 className='text-white font-bold mb-3'>Nível de atividade <span className='text-red-500'>*</span></h1>
                     <Select onValueChange={setSelectedNivelAtividade}>
@@ -103,8 +103,8 @@ const StepThree: React.FC<TStepThree> = ({ setActualStep }) => {
                     </Select>
                 </div>
 
-                <div className="w-full flex space-x-4">
-                    <div className="w-1/2">
+                <div className="w-full space-y-4">
+                    <div className="w-full">
                         <h1 className='text-white font-bold mb-3'>Unidade de medida <span className='text-red-500'>*</span></h1>
                         <Select onValueChange={setSelectedUnidadeMedida}>
                             <SelectTrigger className='text-[#909090]'>
@@ -120,7 +120,7 @@ const StepThree: React.FC<TStepThree> = ({ setActualStep }) => {
                         </Select>
                     </div>
 
-                    <div className="w-1/2">
+                    <div className="w-full">
                         <h1 className='text-white font-bold mb-3'>Quantidade</h1>
                         <Input
                             value={quantidade}

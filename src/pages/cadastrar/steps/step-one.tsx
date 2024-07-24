@@ -15,8 +15,8 @@ const StepOne: React.FC<TStepOne> = ({ setActualStep }) => {
       <h1 className='text-white text-2xl'>Escolha como será sua ART</h1>
       <p className='text-[#C8C8C8]'>Selecione o modelo de ART e o estado de criação.</p>
 
-      <div className='w-full mt-8 flex gap-4'>
-        <div className='w-full'>
+      <div className='w-full mt-8'>
+        <div className='mb-8'>
           <h1 className='text-white font-bold mb-3'>Estado de origem da ART <span className='text-red-500'>*</span></h1>
           <Select>
             <SelectTrigger className='text-[#909090]'>
@@ -33,7 +33,7 @@ const StepOne: React.FC<TStepOne> = ({ setActualStep }) => {
           </Select>
         </div>
 
-        <div className='w-full'>
+        <div className='mb-8'>
           <h1 className='text-white font-bold mb-3'>Tipo de ART <span className='text-red-500'>*</span></h1>
           <Select>
             <SelectTrigger className='text-[#909090]'>
@@ -49,7 +49,7 @@ const StepOne: React.FC<TStepOne> = ({ setActualStep }) => {
           </Select>
         </div>
 
-        <div className='w-full'>
+        <div className='mb-8'>
           <h1 className='text-white font-bold mb-3'>Forma de registro <span className='text-red-500'>*</span></h1>
           <Select>
             <SelectTrigger className='text-[#909090]'>
@@ -64,10 +64,8 @@ const StepOne: React.FC<TStepOne> = ({ setActualStep }) => {
             </SelectContent>
           </Select>
         </div>
-      </div>
 
-      <div className='w-full mt-8 flex gap-4'>
-        <div className='w-[calc(33.333%-10px)]'>
+        <div className='mb-8'>
           <h1 className='text-white font-bold mb-3'>Participação <span className='text-red-500'>*</span></h1>
           <Select>
             <SelectTrigger className='text-[#909090]'>
@@ -83,7 +81,7 @@ const StepOne: React.FC<TStepOne> = ({ setActualStep }) => {
           </Select>
         </div>
 
-        <div className='w-[calc(33.333%-10px)]'>
+        <div className='mb-8'>
           <h1 className='text-white font-bold mb-3'>Finalidade</h1>
           <Input
             placeholder='Finalidade'
@@ -107,8 +105,6 @@ const StepOne: React.FC<TStepOne> = ({ setActualStep }) => {
             do respectivo regulamento de arbitragem que, expressamente, as partes declaram concordar.
           </p>
         </div>
-
-
       </div>
 
       <div className='flex items-center justify-between mt-20'>

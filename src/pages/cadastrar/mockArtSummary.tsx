@@ -11,7 +11,7 @@ interface MockArtSummaryProp {
   artType?: string;
 }
 
-const MockArtSummary: React.FC<MockArtSummaryProp> = ({ handleBack, handleContinue, artType }) => {
+const MockArtSummary: React.FC<MockArtSummaryProp> = ({ artType }) => {
   const artRegistered = useRegisterArt();
   const userLocal = localStorage.getItem('user');
   const [user, setUser] = useState<UserModel>({});
@@ -122,7 +122,7 @@ const MockArtSummary: React.FC<MockArtSummaryProp> = ({ handleBack, handleContin
         <div className='w-full mt-12'>
           <div>
             <div className='w-fit z-50'>
-              <p className='font-medium bg-white absolute -mt-4 ml-20'>4. Observações</p>
+              <p className='font-medium bg-white-mt-4'>4. Observações</p>
             </div>
             <div className='w-full h-[1px] bg-black z-0' />
           </div>
@@ -135,7 +135,7 @@ const MockArtSummary: React.FC<MockArtSummaryProp> = ({ handleBack, handleContin
         <div className='w-full mt-12'>
           <div>
             <div className='w-fit z-50'>
-              <p className='font-medium bg-white absolute -mt-4 ml-20'>5. Entidade de Classe</p>
+              <p className='font-medium bg-white -mt-4'>5. Entidade de Classe</p>
             </div>
             <div className='w-full h-[1px] bg-black z-0' />
           </div>
@@ -144,24 +144,6 @@ const MockArtSummary: React.FC<MockArtSummaryProp> = ({ handleBack, handleContin
             <p>-</p>
           </div>
         </div>
-      </div>
-      <div className="flex justify-between items-center border-t w-ful p-6">
-        <Button
-          onClick={() => handleBack()}
-          className='bg-brand/5'>
-          <p className='text-brand font-medium'>Voltar</p>
-        </Button>
-        <Button
-          onClick={() => {
-            if (handleContinue) {
-              handleContinue();
-            }
-          }}
-          className="flex gap-2 rounded-sm h-10"
-          type="button"
-        >
-          <p>{artType === 'COD104' ? 'Continuar' : 'Gerar rascunho'}</p>
-        </Button>
       </div>
     </div>
   )

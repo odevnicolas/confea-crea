@@ -47,7 +47,7 @@ const StepFive: React.FC<TStepFive> = ({ setActualStep }) => {
       </div>
       <div className='flex items-center justify-between mt-20 '>
         <Button
-          onClick={() => setActualStep(2)}
+          onClick={() => setActualStep(4)}
           className='bg-brand/5'>
           <p className='text-brand font-medium'>Voltar</p>
         </Button>

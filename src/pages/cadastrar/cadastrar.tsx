@@ -84,7 +84,7 @@ const Cadastrar: React.FC<{ closeModal: () => void }> = ({closeModal}: { closeMo
       </header>
       
       <div className='flex'>
-        <div className='min-w-60 border-r border-[#333333]'>
+        <div className='min-w-60 h-screen border-r border-[#333333]'>
           <div className='w-full h-full flex flex-col pt-10 items-center ml-5 gap-13'>
             {steps.map(step => (
               <div className='w-full '>
