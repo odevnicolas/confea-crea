@@ -6,7 +6,7 @@ import { Button } from '../../ui/button';
 import CreaLogoIcon from '../../icons/logo'
 import SupportIcon from '../../icons/support'
 import LoginGreetingIMG from '../../assets/loginGreeting.jpg'
-import { Dialog, DialogContent, DialogTrigger } from '../../ui/modal';
+import { Dialog, DialogContent, DialogTrigger } from '../../ui/dialog';
 
 const LoginForm: React.FC = () => {
   const [govLoginModalIsOppened, setGovLoginModalIsOppened] = useState(false);
