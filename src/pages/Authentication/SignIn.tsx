@@ -1,8 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import InputMask from 'react-input-mask';
 import GovIcon from '../../icons/gov';
-import { Input } from '../../ui/input';
+import { Input, InputProps } from '../../ui/input';
 import { Button } from '../../ui/button';
 import CreaLogoIcon from '../../icons/logo';
 import SupportIcon from '../../icons/support';
@@ -11,11 +12,14 @@ import { Dialog, DialogContent, DialogTrigger } from '../../ui/dialog';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../../contexts/AuthContext';
+import { JSX } from 'react/jsx-runtime';
 
 const LoginForm: React.FC = () => {
   const [govLoginModalIsOppened, setGovLoginModalIsOppened] = useState(false);
   const [cpf, setCpf] = useState('');
   const [password, setPassword] = useState('');
+  const [modalCpf, setModalCpf] = useState('');
+  const [modalPassword, setModalPassword] = useState('');
   const navigate = useNavigate();
   const { login } = useAuth();
 
@@ -23,8 +27,25 @@ const LoginForm: React.FC = () => {
     if (cpf === '000.000.000-00' && password === '123456789') {
       toast.success('Login foi um sucesso!', {
         onClose: () => {
-          login();
-          navigate('/');
+          setTimeout(() => {
+            login();
+            navigate('/');
+          }, 1000);
+        },
+      });
+    } else {
+      toast.error('Cadastro inválido!');
+    }
+  };
+
+  const handleModalLogin = () => {
+    if (modalCpf === '000.000.000-00' && modalPassword === '123456789') {
+      toast.success('Login foi um sucesso!', {
+        onClose: () => {
+          setTimeout(() => {
+            login();
+            navigate('/');
+          }, 1000);
         },
       });
     } else {
@@ -78,19 +99,32 @@ const LoginForm: React.FC = () => {
 
                 <div className='mt-6'>
                   <h1 className='text-grays-100 text-base font-medium mb-4'>CPF</h1>
-                  <Input
-                    placeholder='000.000.000-00'
-                  />
+                  <InputMask
+                    mask="999.999.999-99"
+                    value={modalCpf}
+                    onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setModalCpf(e.target.value)}
+                  >
+                    {(inputProps: JSX.IntrinsicAttributes & InputProps & React.RefAttributes<HTMLInputElement>) => (
+                      <Input
+                        {...inputProps}
+                        placeholder="000.000.000-00"
+                        style={{ color: 'black' }}
+                      />
+                    )}
+                  </InputMask>
 
                   <h1 className='text-grays-100 text-base font-medium mt-6 mb-4'>Senha</h1>
                   <Input
                     type='password'
                     placeholder='Senha'
+                    value={modalPassword}
+                    onChange={(e) => setModalPassword(e.target.value)}
+                    style={{ color: 'black' }}
                   />
                 </div>
 
                 <Button
-                  onClick={() => setGovLoginModalIsOppened(false)}
+                  onClick={handleModalLogin}
                   className='mt-10 bg-brand text-white h-12'>
                   <p>Acessar</p>
                 </Button>
@@ -104,11 +138,19 @@ const LoginForm: React.FC = () => {
 
             <div className='mt-6'>
               <h1 className='text-grays-100 text-base font-medium mb-4'>CPF</h1>
-              <Input
-                placeholder='000.000.000-00'
+              <InputMask
+                mask="999.999.999-99"
                 value={cpf}
-                onChange={(e) => setCpf(e.target.value)}
-              />
+                onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setCpf(e.target.value)}
+              >
+                {(inputProps: JSX.IntrinsicAttributes & InputProps & React.RefAttributes<HTMLInputElement>) => (
+                  <Input
+                    {...inputProps}
+                    placeholder="000.000.000-00"
+                    style={{ color: 'black' }}
+                  />
+                )}
+              </InputMask>
 
               <h1 className='text-grays-100 text-base font-medium mt-6 mb-4'>Senha</h1>
               <Input
@@ -116,6 +158,7 @@ const LoginForm: React.FC = () => {
                 placeholder='Senha'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                style={{ color: 'black' }}
               />
             </div>
             <p className='text-sm text-grays-60 mt-6 self-end'>Esqueceu sua senha? <span className='text-brand cursor-pointer'>Clique aqui</span></p>
