@@ -73,7 +73,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   const handleLogout = () => {
     // Logic for logging out
-    navigate('/login');
+    navigate('/auth/signin');
   };
 
   return (
