@@ -217,3 +217,7 @@ span.flatpickr-weekday,
 [x-cloak] {
   display: none !important;
 }
+
+input {
+  color: rgba(17, 24, 39, 1); /* preto */
+}
