@@ -73,7 +73,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   const handleLogout = () => {
     // Logic for logging out
-    navigate('/auth/signin');
+    navigate('/login');
   };
 
   return (
@@ -138,7 +138,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </div>
           </div>
 
-          <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
+          <h3 className="mb-4 ml-4 text-sm font-semibold text-[#909090]">
             MENU
           </h3>
 
@@ -146,45 +146,47 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <li>
               <NavLink
                 to="/"
-                className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                  pathname === '/' ? 'bg-graydark dark:bg-meta-4' : ''
+                className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out ${
+                  pathname === '/'
+                    ? 'bg-[#14171C] text-white'
+                    : 'text-[#909090] hover:bg-[#14171C]'
                 }`}
               >
-                <Home className="h-5 w-5" />
+                <Home className={`h-5 w-5 ${pathname === '/' ? 'text-white' : 'text-[#909090]'}`} />
                 Dashboard
               </NavLink>
             </li>
             <li>
               <button
                 onClick={showToast}
-                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 w-full text-left"
+                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
               >
-                <FileText className="h-5 w-5" />
+                <FileText className="h-5 w-5 text-[#909090]" />
                 Contratantes
               </button>
             </li>
             <li>
               <button
                 onClick={showToast}
-                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 w-full text-left"
+                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
               >
-                <FileText className="h-5 w-5" />
+                <FileText className="h-5 w-5 text-[#909090]" />
                 ART
               </button>
             </li>
             <li>
               <button
                 onClick={showToast}
-                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 w-full text-left"
+                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
               >
-                <DollarSign className="h-5 w-5" />
+                <DollarSign className="h-5 w-5 text-[#909090]" />
                 Financeiro
               </button>
             </li>
           </ul>
 
           <div>
-            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
+            <h3 className="mb-4 ml-4 text-sm font-semibold text-[#909090]">
               Outros
             </h3>
 
@@ -192,18 +194,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <button
                   onClick={showToast}
-                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 w-full text-left"
+                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
                 >
-                  <Settings className="h-5 w-5" />
+                  <Settings className="h-5 w-5 text-[#909090]" />
                   Configurações
                 </button>
               </li>
               <li>
                 <button
                   onClick={handleLogout}
-                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 w-full text-left"
+                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
                 >
-                  <LogOut className="h-5 w-5" />
+                  <LogOut className="h-5 w-5 text-[#909090]" />
                   Sair da Conta
                 </button>
               </li>
