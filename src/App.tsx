@@ -156,7 +156,9 @@ function App() {
           element={
             <>
               <PageTitle title="Cadastrar ART" />
-              <Cadastrar />
+              <Cadastrar closeModal={function (): void {
+                throw new Error('Function not implemented.');
+              } } />
             </>
           }
         />

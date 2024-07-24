@@ -14,7 +14,10 @@ const ECommerce: React.FC = () => {
   return (
     <DefaultLayout>
       <div className='flex justify-between mb-8'>
-        <p>Inicio / Dashboard</p>
+        <div>
+          <h1 className='dark:text-white font-extrabold text-2xl'>CREA - SP</h1>
+          <p>Inicio / Dashboard</p>
+        </div>
         <p>Precisando de ajuda consulte? <span className='text-blue-500'>Manual de Área de Serviços</span></p>
       </div>
 
