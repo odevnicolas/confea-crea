@@ -341,7 +341,7 @@ const SignUp: React.FC = () => {
                   <p>
                     Already have an account?{' '}
                     <Link to="/auth/signin" className="text-primary">
-                      Sign in
+                      Login
                     </Link>
                   </p>
                 </div>
