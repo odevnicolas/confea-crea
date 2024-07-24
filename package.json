@@ -12,7 +12,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-select": "^2.1.1",
     "apexcharts": "^3.41.0",
     "class-variance-authority": "^0.7.0",
     "flatpickr": "^4.6.13",
