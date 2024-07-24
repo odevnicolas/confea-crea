@@ -12,13 +12,6 @@ import { X } from 'lucide-react';
 const Cadastrar: React.FC<{ closeModal: () => void }> = ({closeModal}: { closeModal: () => void }) => {
   const [actualStep, setActualStep] = useState(1);
 
-  useEffect(() => {
-    document.body.classList.add('no-scroll');
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
-  }, []);
-
   const actualPage = () => {
     switch (actualStep) {
       case 1:

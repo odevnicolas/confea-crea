@@ -7,7 +7,7 @@ type TStepFour = {
   }
 const StepFour: React.FC<TStepFour> = ({ setActualStep }) => {
     return(
-    <div className="h-screen overflow-hidden">
+      <div className="h-screen overflow-auto scrollbar-hide">
         <div className="mb-10"> 
           <h1 className="text-3xl text-white">Detalhes do contrato</h1>
           <p className="text-[18px] text-[#C8C8C8] pt-2 mt-2">Edite e selecione os detalhes do contrato.</p>

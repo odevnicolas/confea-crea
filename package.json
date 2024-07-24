@@ -36,6 +36,7 @@
     "react-toastify": "^9.1.3",
     "sort-by": "^0.0.2",
     "tailwind-merge": "^2.4.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
