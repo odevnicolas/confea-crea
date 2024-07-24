@@ -2,6 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import StepOne from './steps/step-one';
 import StepTwo from './steps/step-two';
+import StepFive from './steps/step-five';
+import StepSix from './steps/step-six';
+import StepSeven from './steps/step-seven';
+import StepThree from './steps/step-three';
+import StepFour from './steps/step-four';
 
 const Cadastrar: React.FC = () => {
   const [actualStep, setActualStep] = useState(1);
@@ -19,6 +24,16 @@ const Cadastrar: React.FC = () => {
         return <StepOne setActualStep={setActualStep} />;
       case 2:
         return <StepTwo setActualStep={setActualStep} />;
+      case 3:
+        return <StepThree setActualStep={setActualStep}/>
+      case 4:
+        return <StepFour setActualStep={setActualStep}/>
+      case 5:
+        return <StepFive setActualStep={setActualStep}/>
+      case 6:
+        return <StepSix setActualStep={setActualStep}/>
+      case 7:
+        return <StepSeven setActualStep={setActualStep}/>
       default:
         return <StepOne setActualStep={setActualStep} />;
     }

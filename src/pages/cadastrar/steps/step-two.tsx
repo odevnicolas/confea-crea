@@ -189,7 +189,7 @@ const StepTwo: React.FC<TStepTwo> = ({ setActualStep }) => {
         </Button>
 
         <Button
-          onClick={() => setActualStep(6)}
+          onClick={() => setActualStep(3)}
           className='bg-brand'>
           <p className='text-white font-medium'>Continuar</p>
         </Button>
