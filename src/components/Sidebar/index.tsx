@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import SidebarLinkGroup from './SidebarLinkGroup';
 import Logo from '../../images/logo/logo.svg';
 import { Settings, Home, FileText, DollarSign, AlertTriangle, LogOut } from 'lucide-react';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -83,11 +82,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
-      <Toaster />
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <div className='flex items-center gap-4'>
-          <NavLink to="/">
+          <NavLink to="/" className="cursor-pointer">
             <img src={Logo} alt="Logo" />
           </NavLink>
           <h1 className='text-2xl font-extrabold text-white'>CONFEA</h1>
@@ -98,7 +96,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-controls="sidebar"
           aria-expanded={sidebarOpen}
-          className="block lg:hidden"
+          className="block lg:hidden cursor-pointer"
         >
           <svg
             className="fill-current"
@@ -126,7 +124,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <select
                 value={selectedCrea}
                 onChange={(e) => setSelectedCrea(e.target.value)}
-                className="block appearance-none w-full bg-[#14171C] text-white py-4 px-4 pr-12 rounded leading-tight focus:outline-none focus:bg-gray-700 focus:border-gray-500"
+                className="block appearance-none w-full bg-[#14171C] text-white py-4 px-4 pr-12 rounded leading-tight focus:outline-none focus:bg-gray-700 focus:border-gray-500 cursor-pointer"
               >
                 <option value="CE">CREA - CE</option>
                 <option value="SP">CREA - SP</option>
@@ -146,7 +144,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <li>
               <NavLink
                 to="/"
-                className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out ${
+                className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out cursor-pointer ${
                   pathname === '/'
                     ? 'bg-[#14171C] text-white'
                     : 'text-[#909090] hover:bg-[#14171C]'
@@ -159,7 +157,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <li>
               <button
                 onClick={showToast}
-                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
+                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left cursor-pointer"
               >
                 <FileText className="h-5 w-5 text-[#909090]" />
                 Contratantes
@@ -168,7 +166,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <li>
               <button
                 onClick={showToast}
-                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
+                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left cursor-pointer"
               >
                 <FileText className="h-5 w-5 text-[#909090]" />
                 ART
@@ -177,7 +175,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <li>
               <button
                 onClick={showToast}
-                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
+                className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left cursor-pointer"
               >
                 <DollarSign className="h-5 w-5 text-[#909090]" />
                 Financeiro
@@ -194,7 +192,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <button
                   onClick={showToast}
-                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
+                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left cursor-pointer"
                 >
                   <Settings className="h-5 w-5 text-[#909090]" />
                   Configurações
@@ -203,7 +201,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <button
                   onClick={handleLogout}
-                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left"
+                  className="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-[#909090] duration-300 ease-in-out hover:bg-[#14171C] w-full text-left cursor-pointer"
                 >
                   <LogOut className="h-5 w-5 text-[#909090]" />
                   Sair da Conta

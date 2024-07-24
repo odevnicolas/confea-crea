@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Download, Plus } from 'lucide-react';
+import { AlertTriangle, Download, Plus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../ui/tabs';
 import Cadastrar from '../../../pages/cadastrar/cadastrar';
@@ -55,7 +55,7 @@ export function ArtTableList({
 
   const showToast = () => {
     toast('Ainda está em desenvolvimento', {
-      icon: <Download />,
+      icon: <AlertTriangle />,
       position: 'top-center',
       style: {
         borderRadius: '10px',
