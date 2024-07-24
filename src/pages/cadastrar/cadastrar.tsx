@@ -7,8 +7,9 @@ import StepSix from './steps/step-six';
 import StepSeven from './steps/step-seven';
 import StepThree from './steps/step-three';
 import StepFour from './steps/step-four';
+import { X } from 'lucide-react';
 
-const Cadastrar: React.FC = () => {
+const Cadastrar: React.FC<{ closeModal: () => void }> = ({closeModal}: { closeModal: () => void }) => {
   const [actualStep, setActualStep] = useState(1);
 
   useEffect(() => {
@@ -78,14 +79,19 @@ const Cadastrar: React.FC = () => {
   ]
 
   return (
-    <div className='flex-1 w-screen h-dvhp overflow-hidden bg-[#090E14]'>
-      <header className='p-8 border-b border-[#333333]'>
-        <h1 className='text-white font-bold'>Criar nova ART</h1>
-        <p className='text-[#C8C8C8]'>Agora ficou mais rápido a criação de uma ART, basta seleciona o método que mais lhe convém.</p>
+    <div className='flex-1 overflow-hidden bg-[#090E14]'>
+      <header className='p-8 border-b border-[#333333] flex items-center justify-between'>
+        <div>
+          <h1 className='text-white font-bold'>Criar nova ART</h1>
+          <p className='text-[#C8C8C8]'>Agora ficou mais rápido a criação de uma ART, basta seleciona o método que mais lhe convém.</p>
+        </div>
+        <button onClick={closeModal}>
+          <X />
+        </button>
       </header>
       
       <div className='flex'>
-        <div className='min-w-60 h-screen border-r border-[#333333]'>
+        <div className='min-w-60 border-r border-[#333333]'>
           <div className='w-full h-full flex flex-col pt-10 items-center ml-5 gap-13'>
             {steps.map(step => (
               <div className='w-full '>

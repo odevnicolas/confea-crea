@@ -1,6 +1,3 @@
-'use client';
-
-import { Dialog, DialogContent } from '../../../ui/dialog';
 
 // import { useArtListStore } from '@/stores/artFilters';
 // import { parseArtListDataModel } from '@/utils/parseArtListDataModel';
@@ -12,6 +9,7 @@ import { DatagetFiTableArt } from './data-table-art';
 // import { TableAction } from './table-actions';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../ui/tabs';
 import { Download, Plus } from 'lucide-react';
+import Cadastrar from '../../../pages/cadastrar/cadastrar';
 
 const dataList = [
   {
@@ -51,7 +49,12 @@ export function ArtTableList({
   loading,
 }: ArtTableProps) {
   const [loaded] = useState<boolean>(true);
+  const [modalRegisterArt, setModalRegisterArt] = useState<boolean>(false);
   const defaultActiveTab = activeTab;
+
+  const closeModal = () => {
+    setModalRegisterArt(false)
+  }
 
   return (
     <div>
@@ -62,7 +65,9 @@ export function ArtTableList({
 				    <Download size={14} className='text-blue-500'/>
             Baixar relatório
           </button>
-          <button className='flex items-center gap-2 bg-[#187BF0] px-4 py-1 text-white'>
+          <button 
+            onClick={() => setModalRegisterArt(!modalRegisterArt)}
+            className='flex items-center gap-2 bg-[#187BF0] px-4 py-1 text-white'>
             <Plus size={14} className='text-white'/>
             Nova ART
           </button>
@@ -161,6 +166,14 @@ export function ArtTableList({
           </div>
         )}
       </Tabs>
+
+      {modalRegisterArt && (
+        <div className='fixed inset-0 z-20 bg-black bg-opacity-80 overflow-y-auto'>
+          <div className='m-12'>
+            <Cadastrar closeModal={closeModal} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
